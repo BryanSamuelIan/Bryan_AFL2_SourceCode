@@ -20,12 +20,12 @@ void printOuterStructure(int max_frames) {
 }
 
 void printCurrFrames(int item, int frame_items[], int frame_occupied, int max_frames, int hit) {
-    cout << item << "\t";
+    cout << item << "\t\t";
     for (int i = 0; i < max_frames; i++) {
         if (i < frame_occupied) {
-            cout << frame_items[i] << "\t";
+            cout << frame_items[i] << "\t\t";
         } else {
-            cout << "-\t";
+            cout << "-\t\t";
         }
     }
     if (hit) {
@@ -50,15 +50,12 @@ int predict(int ref_str[], int frame_items[], int refStrLen, int index, int fram
                 break;
             }
         }
-
         // If we find a page that is never referenced in the future, return it immediately as the best
         if (j == refStrLen) {
             return i;
         }
     }
-
-    // If none of the frame items appear in the reference string in the future, then we return the 0th index.
-    // Otherwise, we return the result.
+    // If none of the frame items appear in the reference string in the future, then we return the 0th index.Otherwise, we return the result.
     return (result == -1) ? 0 : result;
 }
 
@@ -92,7 +89,7 @@ void optimalPage(int ref_str[], int refStrLen, int frame_items[], int max_frames
         }
     }
 
-    cout << "\n\nHits: " << hits << endl;
+    cout << "\nHits: " << hits << endl;
     cout << "Misses: " << refStrLen - hits << endl;
 }
 
