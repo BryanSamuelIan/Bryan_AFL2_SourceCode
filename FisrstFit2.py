@@ -35,4 +35,5 @@ process_Size = [20, 60, 70, 40]
 m = len(block_Size)
 n = len(process_Size)
 
+print("First Fit Variant:")
 FirstFit(block_Size, m, process_Size, n)   

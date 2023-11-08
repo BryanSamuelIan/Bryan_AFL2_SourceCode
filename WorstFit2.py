@@ -29,5 +29,5 @@ process_Size = [20, 60, 70, 40]
 m = len(block_Size)
 n = len(process_Size)
 
-print("Worst Fit:")
+print("Worst Fit Variant:")
 WorstFit(block_Size, m, process_Size, n)
